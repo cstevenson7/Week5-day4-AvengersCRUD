@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h2>Please enter the new information: </h2>
+    <form action="" method="POST">
+        {{ update_form.hidden_tag() }}
+        <div class ="form-group">
+            <fieldset>
+                {{ update_form.realname.label }}
+                {{ update_form.realname(class="form-control", placeholder=" Update Real Name") }}
+            </fieldset>
+
+            <fieldset>
+                {{ update_form.alt_phone.label }}
+                {{ update_form.alt_phone(class="form-control", placeholder=" Update Alternate Phone Number") }}
+            </fieldset>
+            <br>
+            {{ update_form.submit(class= "btn btn-primary") }}
+    
+        </div>
+    </form>
+
+</div>
+
+{% endblock content %}

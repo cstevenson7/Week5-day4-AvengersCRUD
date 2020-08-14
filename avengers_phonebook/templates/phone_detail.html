@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<!-- CSS is not pulling 404 error in terminal-->
+<div class="container">
+    <h1>This number belongs to : {{ phone.author.username }}</h1>  <!--can get username because of the backreference we set up-->   
+    <hr>
+    <h3>Real Name:</h3>
+    <p>{{ phone.realname }}</p>
+
+    <h3>Alternate Number: </h3>
+    <p>{{ phone.alt_phone }}</p>
+    <br>
+    <blockquote>Date Created: {{ phone.date_created }} </blockquote>
+
+    <!--UPDATE BUTTON-->
+    <a href="{{url_for('phone_update', phone_id = phone.id)}}"><button class="btn btn-primary">Update</button></a>
+
+    <!--DELETE BUTTON is a modal -  from Bootstrap  hashtag# is an ID-->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#dangerModal">Delete Real Name and Number</button>
+
+    <div class="modal fade" id="dangerModal" tabindex="-1" role="dialog" aria-labelledby="dangerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="dangerModalLabel">Delete Post - Are You Sure?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              This action can't be reversed. Are you sure you want to delete?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <form action="{{ url_for('phone_delete', phone_id = phone.id ) }}" method="post">
+                  <input type="submit" value="Delete?" class="btn btn-danger">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+{% endblock content%}

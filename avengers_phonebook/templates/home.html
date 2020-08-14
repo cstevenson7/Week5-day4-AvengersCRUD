@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+<header class="banner">
+    <h1 class="header-text"> Avengers Phonebook</h1>
+</header>
+
+<h2>Hello there {{current_user.username }}</h2>
+
+<!--#to see all posts on home page, shows diff info depending on if you are logged in or not-->
+{% if current_user.is_authenticated %}
+    {% for phone in phones %}
+        <div class='container'>
+            <h3>
+                <a href="{{ url_for('phone_detail', phone_id = phone.id) }}">{{ phone.realname }} </a>
+            </h3>
+            <p>{{ phone.alt_phone }} </p>   
+        </div>
+
+    {% endfor %}
+{% else %}
+<h2> No phone numbers are available until you login.</h2>
+{% endif %}
+
+{% endblock content%}

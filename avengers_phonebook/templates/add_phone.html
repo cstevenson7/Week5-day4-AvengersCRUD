@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+    <h1 style = "margin-left: 3vh;"> Add your alternate phone number</h1>
+    <div class ="form-group">
+        <fieldset>
+            {{ form.realname.label }}
+            {{ form.realname(class="form-control", placeholder="Real Name") }}
+        </fieldset>
+
+        <fieldset>
+            {{ form.alt_phone.label }}
+            {{ form.alt_phone(class="form-control", placeholder="Alternate Phone Number") }}
+        </fieldset>
+        <br>
+        {{ form.submit(class= "btn btn-success") }}
+
+
+</form>
+
+{% endblock content %}
