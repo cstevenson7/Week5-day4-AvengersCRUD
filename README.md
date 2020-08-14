@@ -127,3 +127,10 @@ In the search area in the Add-ons section, type Heroku Postgres , click Enter, a
 
 
 python -m pip install --upgrade pip
+
+# Don't push your virtual environments to github, 
+instead add a requirements.txt by running pip freeze > requirements.txt
+To install all dependencies from someone else's project - fork repo/pull changes, create your own virtual environment and run
+
+# To install all dependencies
+pip install -r requirements.txt 
