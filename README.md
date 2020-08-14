@@ -54,7 +54,7 @@ Hulk green	hulk@email.com	999-888-7777
 look at Week5  day4 screen shots
 
  To remove a file from github
-git rm --cached app.db - this semmed to remove the app.db from the 
+git rm --cached app.db - this seemed to remove the app.db from the 
 
 # FOR Herocu
 

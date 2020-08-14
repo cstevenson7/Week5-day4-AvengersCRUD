@@ -4,7 +4,7 @@
 
 <form action="" method="POST">
     {{ form.hidden_tag() }}
-    <h1 style = "margin-left: 3vh;"> Add your alternate phone number</h1>
+    <h1 style = "margin-left: 3vh;"> Add your phone number</h1>
     <div class ="form-group">
         <fieldset>
             {{ form.realname.label }}
@@ -13,7 +13,7 @@
 
         <fieldset>
             {{ form.alt_phone.label }}
-            {{ form.alt_phone(class="form-control", placeholder="Alternate Phone Number") }}
+            {{ form.alt_phone(class="form-control", placeholder="Phone Number") }}
         </fieldset>
         <br>
         {{ form.submit(class= "btn btn-success") }}

@@ -18,17 +18,17 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(150), unique=True, nullable=False)
    
     email = db.Column(db.String(151), unique=True, nullable=False)
-    phone_number = db.Column(db.String(15), unique=True, nullable=False)
+
     password = db.Column(db.String(256), nullable=False)
 
     #Helping to set up the FK a many to one relationship
     phone = db.relationship('Phone', backref='author', lazy=True )
 
-    def __init__(self,username,email,phone_number,password):
+    def __init__(self,username,email,password):
         self.username= username
         #self.realname= realname
         self.email = email
-        self.phone_number = phone_number
+
         self.password = self.set_password(password)
     
     # don't want passwords in our database

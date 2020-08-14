@@ -31,12 +31,12 @@ def register():
     if request.method == 'POST' and form.validate():
         #Get Information
         username = form.username.data
-        email = form.email.data  
-        phone_number = form.phone_number.data      
+        email = form.email.data
+               
         password = form.password.data     
-        print("\n", username, email, phone_number, password)  # this will print out in terminal
+        print("\n", username, email,  password)  # this will print out in terminal
         #Create and instance of User-- look at the __init__ in models
-        user = User(username, email, phone_number, password)
+        user = User(username, email, password)
         #Open and insert into db - connecting to db like an insert statement
         db.session.add(user)
         # lik git add and then commit Save info to db
