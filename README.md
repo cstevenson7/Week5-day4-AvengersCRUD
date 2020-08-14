@@ -7,7 +7,7 @@ D:\Coding_Temple\week5\day1\Project>python -m venv avengers_env
 # JUST  DO  THIS to get into the VE
 D:\Coding_Temple\week5\day1\Project>avengers_env\scripts\activate.bat
 
-
+#  after connection to VE do pip list and see wahts these
 
 set FLASK_APP=app.py
 
@@ -118,3 +118,12 @@ then commit everything to Heorku
 # handy command - this was the mac command
 "/usr/local/bin:$PATH"
 
+# ADD  Cofig keys to Heroku
+
+# Provision the Heroku Postgres Add-On
+Click the Manage App button to visit the Heroku Dashboard and click on your new application.
+Click the Resources tab.
+In the search area in the Add-ons section, type Heroku Postgres , click Enter, and then click Provision.
+
+
+python -m pip install --upgrade pip
